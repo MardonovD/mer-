@@ -1,3 +1,8 @@
+import * as model from './model.js';
+
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
 const recipeContainer = document.querySelector('.recipe');
 
 const timeout = function (s) {
@@ -11,3 +16,13 @@ const timeout = function (s) {
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
+
+const recipeControl = async function () {
+  try {
+    model.loadRECIPE();
+  } catch (err) {
+    alert(err);
+  }
+};
+
+recipeControl();
